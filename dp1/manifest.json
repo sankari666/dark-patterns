@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Shopping Guard",
+  "description": "This extension will give you the detail of the product you are currently viewing.",
+  "version": "1.0",
+  "icons": {
+    "32": "icon32.png"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "browser_action": {
+    "default_popup": "popup1.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.amazon.in/*"],
+      "js": ["jquery.js", "myScript.js", "content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "gcm",
+    "storage",
+    "notifications",
+    "identity"
+  ]
+}
+
